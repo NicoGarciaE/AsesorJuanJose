@@ -3,172 +3,433 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grupo Scoppa</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/images/icons/scoppa_color.png"
+    />
+    <title>Asesor Juan José</title>
+
     <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
       rel="stylesheet"
     />
+    <!-- FONTAWESOME ICONS -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <script src="scripts.js" defer></script>
   </head>
   <body>
+    <a 
+      href="https://api.whatsapp.com/send?phone=%2B542664220160&context=Afd0IWWGe9TEl--lLQ_RTtZcSca8RYl1zn7cH9nB-86cJP1GUQMx0DefB5MoTMURI3e8qubIZzaeB1VEkfPRIcCQSXKhnsQ7CU5QdqDbXqNk-qmerJASJPBDiSh5rwBunpJprvjQktXua94MGbXFzlYUoA&source=FB_Page&app=facebook&entry_point=page_cta" 
+      target="_blank" 
+      class="whatsapp-float"
+    >
+      <img src="./assets/images/icons/wsp_color_full.png" alt="WhatsApp" />
+    </a>
+
     <header>
+      <img
+        id="logo"
+        alt="Asesor Juan José Logo"
+        src="./assets/images/logos/GMJJ_fondo_blanco.jpg"
+        height="75"
+        width="50"
+      />
       <nav class="navbar">
-        <div class="logo">
-          <img
-            src="Logo Grupo Scoppa png.png"
-            width="150"
-            height="75"
-            alt="Grupo Scoppa Logo"
-          />
+        <div class="menu-abrir" id="menu-abir">&#9776;</div>
+        <div class="nav" id="nav">
+          <div class="menu-cerrar" id="menu-cerrar">&#9776;</div>
+          <div class="nav-links" id="nav-links">
+            <ul>
+              <li>
+                <a href="#Inicio"><i class="fas fa-home"></i> Inicio</a>
+              </li>
+              <li>
+                <a href="#Cotizar"
+                  ><i class="fas fa-hand-holding-dollar"></i> Cotizar</a
+                >
+              </li>
+              <li>
+                <a href="#Beneficios"
+                  ><i class="fas fa-award"></i> Beneficios</a
+                >
+              </li>
+              <li>
+                <a href="#Requisitos"
+                  ><i class="fas fa-clipboard-list"></i> Requisitos</a
+                >
+              </li>
+              <li>
+                <a href="#Contacto"><i class="fas fa-envelope"></i> Contacto</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
-    <section class="hero" id="home">
+
+    <section id="Inicio" class="seccion-inicio">
+      <div class="contenido-inicio texto-combinado">
+        <h1>¿Qué son los <em>Seguros de Caución?</em></h1>
+        <div class="caucion-descripcion fade-down">
+          <p>
+            El seguro de caución es una póliza, otorgada por una compañía de
+            seguros. Este seguro brinda una <b>garantía al propietario </b>ante
+            las obligaciones del inquilino en el alquiler de viviendas
+            particulares y/o comercial, como así también permite reemplazar o
+            suplir la garantía de un título de propiedad inmueble, que se suele
+            solicitar al momento de la firma del contrato.
+          </p>
+        </div>
+
+        <div class="caucion-lista fade-down">
+          <ul>
+            <li>
+              El seguro de caución verifica la solvencia y capacidad de pago del
+              inquilino.
+            </li>
+            <li>
+              Es una excelente opción para quienes necesitan alquilar y no
+              cuentan con una garantía propietaria.
+            </li>
+            <li>
+              Esta póliza es 100% digital y autorizada por la Superintendencia
+              de Seguros de la Nación.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="Cotizar" class="cotizar">
       <div class="overlay">
-        <h2>Cotizá tu Seguro de Caución papi</h2>
+        <div><h2>Cotizá tu Seguro de Caución</h2></div>
+
         <div class="cards-container">
           <div class="card card-green">
             <img
-              src="./assets/images/logo-TS.png"
+              src="./assets/images/logos/triunfo.png"
               alt="Triunfo Seguros Logo"
-              class="company-logo"
+              class="company-logoTS"
             />
-            <p>
-              Garantías de obras, suministros y/o servicios públicos o privados,
-              garantías judiciales, garantía de alquileres, garantías aduaneras,
-              garantías de tenencia, garantías registro de importadores /
-              exportadores, desempeño de una actividad o profesión, agencias de
-              viajes y turismo, expendedores de combustibles
-            </p>
-            <button>COTIZAR</button>
+            <!-- <p> -->
+            <!-- El Seguro de Caución se emite para asegurar el cumplimiento en -->
+            <!-- tiempo y forma de una obligación que surge de la firma de un -->
+            <!-- contrato, cuando el Beneficiario de dicha obligación deja -->
+            <!-- expresado en el mismo que el Tomador (o sujeto obligado) garantice -->
+            <!-- el cumplimiento.. -->
+            <!-- </p> -->
+            <div class="alcances-list">
+              <h3>Alcance de cobertura</h3>
+              <ul>
+                <li>Alquileres Impagos.</li>
+                <li>Expensas Ordinarias (hasta 10% del monto del contrato).</li>
+                <li>
+                  Servicios e Impuestos (hasta 10% del monto del contrato).
+                </li>
+                <li>Ocupación Indebida (hasta 10% del monto del contrato).</li>
+                <li>
+                  Depósito de Garantía (hasta 10% del monto del contrato).
+                </li>
+              </ul>
+            </div>
           </div>
+
           <div class="card card-blue">
             <img
-              src="./assets/images/logo-BBVA.svg"
+              src="./assets/images/logos/BBVA.svg"
               alt="BBVA Logo"
               class="company-logo"
             />
-            <p>
-              Brinda una garantía al propietario ante las obligaciones
-              contraídas por el inquilino en el alquiler de viviendas
-              particulares, como asi también permite reemplazar o suplir la
-              garantía de un título de propiedad inmueble. Es por esto que actúa
-              favorablemente tanto para el inquilino como para el propietario.
-              La póliza también le otorga al propietario cobertura ante el
-              incumplimiento por parte del inquilino del pago del alquiler,
-              expensas, servicios o impuestos, y también por ocupación indebida.
-            </p>
-            <button>COTIZAR</button>
+            <!-- <p> -->
+            <!-- Este seguro brinda una garantía al propietario ante las -->
+            <!-- obligaciones del inquilino en el alquiler de viviendas -->
+            <!-- particulares, como así también permite reemplazar o suplir la -->
+            <!-- garantía de un título de propiedad inmueble, que se suele -->
+            <!-- solicitar al momento de la firma del contrato. -->
+            <!-- </p> -->
+            <div class="alcances-list">
+              <h3>Alcance de cobertura</h3>
+              <ul>
+                <li>Alquileres Impagos.</li>
+                <li>
+                  Expensas Ordinarias (Monto informado por el asegurado por el
+                  plazo de cobertura).
+                </li>
+                <li>Servicios e Impuestos (5 % del monto del contrato).</li>
+                <li>Ocupación Indebida (15 % del monto del contrato).</li>
+                <li>Depósito en Garantía (5 % del monto del contrato).</li>
+              </ul>
+            </div>
           </div>
+
           <div class="card card-purple">
             <img
-              src="./assets/images/logo-GSS.png"
+              src="./assets/images/logos/sancor.png"
               alt="Sancor Seguros Logo"
               class="company-logo"
             />
-            <p>
-              Contamos con un equipo de Asesores de Seguros altamente capacitado
-              e identificado con nuestra marca, orientado a brindarte soluciones
-              a medida para tu empresa.
-            </p>
-            <button>COTIZAR</button>
+            <!-- <p> -->
+            <!-- El seguro de caución de alquiler es una garantía de alquiler para -->
+            <!-- vivienda de uso familiar, asegurando tranquilidad al propietario y -->
+            <!-- al inquilino. -->
+            <!-- </p> -->
+            <div class="alcances-list">
+              <h3>Alcance de cobertura</h3>
+              <ul>
+                <li>Alquileres Impagos.</li>
+                <li>
+                  Expensas comunes Ordinarias (con Sublímite con ajuste
+                  proporcional al canon).
+                </li>
+                <li>
+                  Servicios hasta 10% del canon (con Sublímite del 10% del monto
+                  del contrato).
+                </li>
+                <li>Ocupación Indebida (hasta 6 meses).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="openPopup()">
+          <i class="fas fa-hand-holding-dollar"></i> COTIZAR
+        </button>
+
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup()"
+              ><i class="fas fa-close"></i
+            ></span>
+            <h3 class="title-popup">Cotizá tu Seguro de Alquiler</h3>
+            <form id="cotizacionForm" onsubmit="return calcularSeguro(event)">
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre y apellido"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="text"
+                id="telefono"
+                name="telefono"
+                placeholder="Teléfono"
+                required
+              />
+              <label class="title-form" for="alquiler"
+                >Monto de su Alquiler + Expensas</label
+              >
+              <input
+                type="number"
+                id="alquiler"
+                name="alquiler"
+                placeholder="Ingresá el Monto del Alquiler + Expensas ($)"
+                required
+              />
+              <select id="meses" required>
+                <option value="">Duración del contrato</option>
+                <option value="12">12 meses</option>
+                <option value="24">24 meses</option>
+                <option value="36">36 meses</option>
+              </select>
+              <select id="tipo" required>
+                <option value="">Tipo de contrato</option>
+                <option value="particular">Particular</option>
+                <option value="comercial">Comercial</option>
+              </select>
+              <label class="title-form" for="inmobiliaria"
+                >¿Contrato por Inmobiliaria?</label
+              >
+              <select
+                id="inmobiliaria"
+                name="inmobiliaria"
+                onchange="toggleNombreInmobiliaria()"
+                required
+              >
+                <option value="">Seleccioná una opción</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+
+              <div
+                id="campoNombreInmobiliaria"
+                style="display: none; margin-top: 10px"
+              >
+                <label for="nombreInmobiliaria"
+                  >Nombre de la inmobiliaria</label
+                >
+                <input
+                  type="text"
+                  id="nombreInmobiliaria"
+                  name="nombreInmobiliaria"
+                  placeholder="Ingresá el nombre"
+                />
+              </div>
+
+              <button type="submit">Calcular</button>
+            </form>
+            <div id="resultado" class="resultado"></div>
+          </div>
+        </div>
+
+        <div id="popupResultados" class="popup" style="display: none">
+          <div class="popup-content">
+            <span class="back" onclick="volver()"
+              ><i class="fas fa-arrow-left"></i
+            ></span>
+            <span class="close" onclick="closePopupResultados()"
+              ><i class="fas fa-close"></i
+            ></span>
+            <h2>Resultados de Cotización</h2>
+            <div class="cards-container" id="resultCards"></div>
           </div>
         </div>
       </div>
     </section>
-    <section class="insurance-info" id="services">
-      <h2 class="emphasized-title">Acerca de Seguros de Caución</h2>
-      <p>
-        Los seguros de caución garantizan el cumplimiento de obligaciones en
-        contratos, alquileres y proyectos. Son una garantia de alquiler para
-        vivienda de uso familiar asegurando tranquilidad al propietario y al
-        inquilino
-      </p>
-      <ul>
-        <li>
-          <strong>Obras y Servicios:</strong> Garantías para proyectos públicos
-          y privados.
-        </li>
-        <li>
-          <strong>Alquileres:</strong> Seguridad para propietarios e inquilinos.
-        </li>
-        <li>
-          <strong>Judiciales y Aduaneras:</strong> Cobertura para trámites
-          legales y comerciales.
-        </li>
-      </ul>
-      <h3 class="emphasized-title">Beneficios</h3>
-      <p class="benefits-subtitle">100% claros y sin letra chica</p>
-      <div class="benefits-container">
-        <div class="benefit-card">
-          <h4>Agilidad de otorgamiento</h4>
-          <p>Análisis y respuesta de tu solicitud de forma inmediata.</p>
+
+    <section id="Beneficios-Requisitos">
+      <div class="contenedor-beneficios-requisitos">
+        <div class="columna-beneficios" id="Beneficios">
+          <h4><i class="fas fa-award"></i> Beneficios</h4>
+          <ul>
+            <li>
+              <b>Agilidad de otorgamiento</b>: análisis y respuesta de tu
+              solicitud de forma inmediata.
+            </li>
+            <li>
+              <b>Costos competitivos</b>: contamos con los mejores costos del
+              mercado y facilidad de pago.
+            </li>
+            <li>
+              <b>Atención personalizada</b>: un asesor/a te acompañará en el
+              proceso. Trámite 100% Online.
+            </li>
+          </ul>
         </div>
-        <div class="benefit-card">
-          <h4>Costos competitivos</h4>
-          <p>
-            Contamos con los mejores costos del mercado y facilidad de pago.
-          </p>
-        </div>
-        <div class="benefit-card">
-          <h4>Atención personalizada</h4>
-          <p>Un asesor/a te acompañará en el proceso. Trámite 100% Online.</p>
+
+        <div class="linea-divisoria"></div>
+
+        <div class="columna-requisitos" id="Requisitos">
+          <h4><i class="fas fa-clipboard-list"></i> Requisitos</h4>
+          <ul>
+            <li>DNI, emitido en la Argentina.</li>
+            <li>Ingresos demostrables.</li>
+            <li>
+              Necesitás al menos 12 meses de antigüedad laboral, ya seas
+              independiente o en relación de dependencia.
+            </li>
+            <li>
+              Si sos jubilado y/o pensionado, podés acceder a tu garantía.
+            </li>
+          </ul>
         </div>
       </div>
-      <h3 class="emphasized-title">Requisitos</h3>
-      <ul class="requirements-list">
-        <li>+ DNI emitido en Argentina</li>
-        <li>+ Ingresos demostrables</li>
-        <li>+ Sin antecedentes negativos en el sistema financiero</li>
-        <li>+ Posible información adicional</li>
-      </ul>
-      <p>
-        ¡Cotizá tu seguro de caución de manera rápida y segura con nuestra
-        plataforma online!
-      </p>
     </section>
-    <section class="contact" id="contact">
-      <h2 class="emphasized-title">Contacto</h2>
-      <form>
-        <input type="text" placeholder="Nombre y apellido" required />
-        <input type="email" placeholder="Email" required />
-        <input type="tel" placeholder="Teléfono" required />
-        <textarea placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
+
+    <section id="Contacto" class="contacto">
+      <h5><i class="fas fa-envelope"></i> Contacto</h5>
+      <!-- Formspree para el prototipo -->
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/movwbpvz"
+        method="POST"
+      >
+        <!-- Datos a enviar -->
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre y apellido"
+          required
+        />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="telefono" placeholder="Teléfono" required />
+        <textarea
+          rows="4"
+          name="mensaje"
+          placeholder="Mensaje"
+          required
+        ></textarea>
+        <p id="mensaje-respuesta"></p>
+
+        <button type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
       </form>
     </section>
-    <a
-      href="https://wa.me/549XXXXXXXXX"
-      class="whatsapp-float"
-      target="_blank"
-      aria-label="Contactar por WhatsApp"
-    >
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <footer>
-      <p>📍 Mendoza 556, Río Cuarto, Córdoba</p>
-      <div class="footer-icons">
-        <span
-          ><a href="mailto:info@gruposcoppa.com.ar"
-            >📧 info@gruposcoppa.com.ar</a
-          ></span
-        >
-        <span
-          ><a target="_blank" href="http://www.gruposcoppa.com.ar"
-            >🏠 gruposcoppa.com.ar</a
-          ></span
-        >
-        <span
-          ><a href="tel:+54 (0358) 462 3267">📞 +54 (0358) 462 3267</a></span
-        >
+
+    <footer class="footer">
+      <div class="footer-logo">
+        <img
+          alt="Superintendencia de Seguros de La Nación Logo"
+          src="./assets/images/logos/SSN.png"
+        />
+      </div>
+      <div class="footer-logo">
+        <img
+          alt="Grupo Sura Logo"
+          src="./assets/images/logos/webGrupoSura.png"
+        />
+      </div>
+
+      <div class="contact-social-container">
+        <div class="direccion">
+          <a href="https://maps.app.goo.gl/7JvDdM923tA3BPEf8" target="_blank">
+            <i class="fa fa-location-dot"></i>
+            Av. Sarmiento 1364, San Luis
+          </a>
+        </div>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/GarciaMelitaJuanJose"
+            target="_blank"
+            class="icon"
+          >
+            <img src="./assets/images/icons/fb_color.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/garciamelitagm"
+            target="_blank"
+            class="icon"
+          >
+            <img src="./assets/images/icons/ig_color.png" alt="Instagram" />
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=%2B542664220160&context=Afd0IWWGe9TEl--lLQ_RTtZcSca8RYl1zn7cH9nB-86cJP1GUQMx0DefB5MoTMURI3e8qubIZzaeB1VEkfPRIcCQSXKhnsQ7CU5QdqDbXqNk-qmerJASJPBDiSh5rwBunpJprvjQktXua94MGbXFzlYUoA&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank" class="icon">
+            <img src="./assets/images/icons/wsp_color.png" alt="WhatsApp" />
+          </a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=asesorsegurossl@hotmail.com"
+            target="_blank"
+            class="icon"
+          >
+            <img src="./assets/images/icons/mail_color.png" alt="Email" />
+          </a>
+          <a href="http://www.ssn.gob.ar/" target="_blank" class="icon">
+            <img src="./assets/images/icons/webSSN.png" alt="webSSN" />
+          </a>
+          <a href="https://www.gruposura.com/nuestra-compania/sobre-grupo-sura/" target="_blank" class="icon">
+            <img src="./assets/images/icons/webGrupoSura.png" alt="webGrupoSura" />
+          </a>
+        </div>
       </div>
     </footer>
   </body>

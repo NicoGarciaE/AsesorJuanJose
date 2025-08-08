@@ -1,395 +1,838 @@
 :root {
-  --primary-color: #003087;
-  --accent-color: #ffc107;
-  --hover-color: #00e0af;
-  --button-color: #8990f7;
-  --button-hover-color: #002060;
-  --background-light: #f9f9f9;
-  --background-cards: #f5f7fa;
-  --text-color: #333;
+  --Azul1: #003e57;
+  --Azul2: #005b80;
+  --Turquesa1: #0079a8;
+  --Turquesa2: #0092cc;
+  --Turquesa3: #00b3fa;
+  --Blanco: #fffffa;
+  --font-main: "Montserrat";
+  --font-title: "Merriweather";
+  /* URLs */
+  --bg-inicio: url("./assets/images/bg.png");
 }
 
-:root {
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: var(--font-main);
+  background-color: var(--Blanco);
+  color: var(--Azul1);
+}
+
+section {
+  scroll-margin-top: 100px; /*ajusta el margen superior para que la pag no quede abajo del header*/
+  padding: 3rem 0;
+}
+
+/* Boton flotante */
+.whatsapp-float {
+  text-decoration: none;
+  position: fixed;
+  bottom: 0.5cm; /* distancia desde abajo */
+  right: 0.6cm; /* distancia desde la derecha */
+  z-index: 1000; /* para que quede siempre visible arriba de todo */
+  transition: all 300ms;
+}
+
+.whatsapp-float img {
+  width: 62px; /* tamaño pequeño */
+  height: 62px;
+  border-radius: 50%; /* redondeado (opcional, podés sacar esta línea si no querés redondeo) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* sombra sutil (opcional) */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/*Header*/
+header {
+  width: 100%; /* el elemento ocupa el 100% del ancho */
+  height: 115px; /* altura del elemento */
+  background-color: var(--Blanco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex; /*para que sus elementos esten horizontal*/
+  position: fixed; /* Fija el elemento en una posición específica de la ventana del navegador, incluso durante el desplazamiento. */
+  justify-content: space-between;
+  top: 0; /* pone al elemento en el borde superior de la pagina */
+  z-index: 12;
+  transition: transform 300ms ease-in-out;
+}
+
+header.hide {
+  transform: translateY(-100%);
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
-}
-
-.logo img {
-  width: 150px;
-  height: 75px;
-}
-
-.hero {
-  position: relative;
-  text-align: center;
-  background: url("imagen1.webp") no-repeat center center;
-  background-size: cover;
-  height: 600px;
-  color: #fff;
-  padding-top: 80px;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 1200px;
-  width: 90%;
-}
-
-.hero h2 {
-  color: #fff;
-  font-size: 2.5em;
-  margin: 0 0 30px;
-  font-weight: 700;
-}
-
-.cards-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--Blanco);
+}
+
+.menu-abrir,
+.menu-cerrar {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#logo {
+  width: auto;
+  height: 65px;
+  margin: auto;
+  margin-left: 0.7cm;
+  /* margin-top: 0.3cm; */
+}
+
+.navbar ul {
+  display: flex; /* para que las palabras se alinean horizontalmente*/
+  justify-content: space-evenly; /* para que el espacio sea igual entre todos*/
+  gap: 28px; /* espacio entre los elementos*/
+  list-style-type: none; /* elimina los puntos de la lista desordenada*/
+  padding: 0; /* Elimina el padding del ul */
+  text-align: right;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 18.5px;
+  font-style: italic;
+  color: var(--Azul1);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--Azul2);
+}
+
+/*Inicio*/
+.seccion-inicio {
+  min-height: calc(100vh - 115px);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    center/cover no-repeat;
+  background-image: var(--bg-inicio);
+  padding: 2rem;
+  margin-top: 115px;
+  color: var(--Blanco);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-inicio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5cm;
+}
+
+/* Fondo translúcido + sombra de texto */
+.texto-combinado {
+  background-color: rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.seccion-inicio h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.seccion-inicio em {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.caucion-descripcion,
+.caucion-lista {
+  flex: 1 1 45%;
+  max-width: 85%;
+  min-width: 300px;
+}
+
+.caucion-descripcion p {
+  font-size: 1.25em;
+  line-height: 2;
+}
+
+/* Lista mejorada */
+.caucion-lista {
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.caucion-lista ul {
+  list-style: none; /* Eliminamos bullet clásico */
+  font-size: 1.2em;
+  text-align: left;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.caucion-lista li {
+  position: relative;
+  padding-left: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start; /* para textos multilínea */
+  gap: 0.5em;
+}
+
+.caucion-lista li:hover {
+  transform: translateX(8px);
+}
+
+/* Ícono de check ✔️ */
+.caucion-lista li::before {
+  content: "✔️";
+  color: #00c292;
+  font-size: 1.2em;
+  margin-top: 0.2em; /* ajusta fino si es necesario */
+  flex-shrink: 0; /* evita que el ícono se achique */
+}
+
+@media (max-width: 768px) {
+  .contenido-inicio {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .caucion-descripcion,
+  .caucion-lista {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .texto-combinado {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .caucion-lista ul {
+    padding-left: 0;
+  }
+
+  .caucion-lista li {
+    font-size: 1em;
+    padding-left: 2em;
+    word-wrap: break-word;
+  }
+
+  .caucion-lista li::before {
+    left: 0;
+    top: 0.3em;
+  }
+}
+
+/*Cotizar*/
+.cotizar {
+  background-color: var(--Azul1);
+  text-align: center;
+}
+.overlay {
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cotizar h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--Blanco);
+  font-weight: 400;
+}
+
+/* CARDS */
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .card {
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   justify-content: space-between;
-  color: #333;
+  color: var(--Blanco);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   flex: 1;
   min-width: 250px;
   max-width: 350px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 10px rgb(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 300ms;
 }
 
-.card-green {
-  background-color: #e0f7e0; /* Light green */
+.card img.company-logo {
+  width: 65%; /* Asegura el ancho completo */
+  height: 60px; /* Altura estándar para todas las imágenes */
+  object-fit: contain; /* O 'cover' si prefieres recorte en lugar de ajuste */
+  margin: 10px 0;
 }
 
-.card-blue {
-  background-color: #e0f0ff; /* Light blue */
-}
-
-.card-purple {
-  background-color: #f3e5f5; /* Light purple */
-}
-
-.card .icon {
-  font-size: 2.5rem;
-  color: #00a4a1;
-  margin-bottom: 15px;
-}
-
-.company-logo {
-  width: 100%; /* Asegura el ancho completo */
-  height: 100px; /* Altura estándar para todas las imágenes */
+.card img.company-logoTS {
+  height: 65px; /* Altura estándar para todas las imágenes */
   object-fit: contain; /* O 'cover' si prefieres recorte en lugar de ajuste */
   margin: 10px 0;
 }
 
 .card p {
-  font-size: 0.9em;
-  margin: 0 0 15px;
-  flex-grow: 1;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  line-height: 1.6;
 }
 
-.card button {
-  align-self: center;
-  margin-top: 20px;
-  background-color: #8990f7;
-  color: #ffffff;
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.overlay button {
+  background-color: var(--Turquesa1);
+  color: var(--Blanco);
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0.5cm 1.5cm;
+  margin-top: 1.25cm;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.card button:hover {
-  background-color: #00e0af;
-}
-
-.insurance-info {
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #f5f7fa; /* Uniform background color for the entire section */
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #25d366;
-  color: white;
-  font-size: 2rem;
-  padding: 15px;
-  border-radius: 100%;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  background-color: #128c7e;
-  transform: scale(1.1);
-}
-
-.whatsapp-float i {
-  pointer-events: none;
-}
-
-.insurance-info h2.emphasized-title {
-  color: #003087;
-  margin-bottom: 20px;
-  font-size: 2.2em;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-bottom: 2px solid #ffc107;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.insurance-info h3.emphasized-title {
-  color: #003087;
-  margin: 10px 0;
-  font-size: 2.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-bottom: 2px solid #ffc107;
-  display: block;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-.benefits-subtitle {
-  color: #003087;
-  font-size: 1.1em;
-  font-weight: 400;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.benefits-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap;
-  margin-bottom: 30px;
-}
-
-.benefit-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.benefit-card h4 {
-  color: #003087;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.benefit-card p {
-  color: #555;
+  font-family: var(--font-main);
   font-size: 1em;
-  line-height: 1.5;
+  border-radius: 5px;
+  transition: all 300ms;
 }
 
-.benefit-card:hover {
-  transform: translateY(-5px);
+.overlay button:hover {
+  background-color: var(--Azul2);
 }
 
-.insurance-info p {
-  font-size: 1.3em;
-  margin-bottom: 20px;
+/*ALCANCES*/
+h3 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
-
-.insurance-info ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.insurance-info li {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-.requirements-list {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.requirements-list li {
-  font-size: 1.3em;
-  margin-bottom: 10px;
-}
-
-.contact {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.contact h2.emphasized-title {
-  color: #003087;
-  margin-bottom: 20px;
-}
-
-form {
+.alcances-list {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: auto;
+  padding: 0 1em;
 }
 
-input,
-textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: "Roboto", Arial, sans-serif;
+.alcances-list ul {
+  text-align: left;
+  padding-left: 0.3em;
+}
+
+.alcances-list li {
+  margin-bottom: 0.4em;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
-textarea {
-  height: 120px;
+.popup-content {
+  background-color: var(--Azul2);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: var(--Blanco);
+}
+
+.title-form {
+  display: flex;
+  align-items: flex-start;
+}
+
+.title-popup {
+  padding-bottom: 1.5rem;
+}
+
+#popupResultados .popup-content {
+  max-width: 1000px;
+  width: 95%;
+}
+
+.popup-content h2 {
+  margin-bottom: 1rem;
+  color: var(--Blanco);
+  text-align: center;
+}
+
+.popup-content input,
+.popup-content select,
+.popup-content button,
+.popup-content textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  /* resize: none; */
+}
+
+.popup-content button {
+  background-color: var(--Turquesa1);
+  color: var(--Blanco);
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: var(--Azul1);
+  cursor: pointer;
+}
+
+.back {
+  float: left;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--Blanco);
+  margin-bottom: 1rem;
+}
+
+.back:hover {
+  color: var(--Azul1);
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--Blanco);
+  margin-bottom: 1rem;
+}
+
+.close:hover {
+  color: var(--Azul1);
+}
+
+/* Estilos para las tarjetas dentro del popup de resultados */
+.popup .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.popup .card {
+  background: whitesmoke;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.popup .card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.popup .card p {
+  margin: 0.5rem 0;
+  color: rgb(50, 50, 50);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.popup .card p strong {
+  color: #333;
+}
+
+.popup .card em {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.popup .card-green {
+  border-left: 4px solid #4caf50;
+}
+
+.popup .card-blue {
+  border-left: 4px solid #2196f3;
+}
+
+.popup .card-purple {
+  border-left: 4px solid #9c27b0;
+}
+
+.popup .company-logo {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/*Beneficios y Requisitos*/
+#Beneficios-Requisitos {
+  padding: 70px 20px;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.contenedor-beneficios-requisitos {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  border-left: none;
+  border-right: none;
+}
+
+.columna-beneficios,
+.columna-requisitos {
+  flex: 1;
+}
+
+h4 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 1cm;
+  color: var(--Azul1);
+  font-family: var(--font-title);
+}
+
+.contenedor-beneficios-requisitos ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.contenedor-beneficios-requisitos li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--Azul1);
+  line-height: 1.6;
+}
+
+.linea-divisoria {
+  width: 0.8px;
+  background-color: var(--Azul1);
+  height: auto;
+}
+
+/*Contacto*/
+.contacto {
+  padding: 1.75rem 1rem 3rem;
+  background-color: var(--Azul2);
+  border-top: 2px solid var(--Turquesa1);
+  border-bottom: 2px solid var(--Turquesa1);
+}
+
+.contacto h5 {
+  font-size: 1.6rem;
+  color: var(--Blanco);
+  text-align: center;
+  margin-bottom: 0.8cm;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+.contacto textarea {
   resize: none;
 }
 
-form button {
-  background-color: #003087;
-  color: #fff;
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+  font-family: var(--font-main);
+}
+
+.contacto p {
+  padding: 0.3em;
+  font-weight: 500;
+  color: var(--Blanco);
+}
+
+.contacto button {
+  padding: 0.75rem;
+  background-color: var(--Turquesa1);
+  color: var(--Azul1);
+  font-weight: bold;
   border: none;
-  padding: 12px;
   border-radius: 5px;
-  font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s;
+  width: 120px;
+  margin: 0 auto;
+  transition: all 300ms;
+  margin-top: 0.3cm;
 }
 
-form button:hover {
-  background-color: #002060;
+.contacto button:hover {
+  background-color: var(--Azul1);
+  color: var(--Blanco);
 }
 
-footer {
-  background-color: #003087;
-  color: #fff;
-  padding: 20px;
+/*Footer*/
+.footer {
+  background-color: var(--Blanco);
+  color: var(--Azul2);
+  padding: 1.2rem;
+
   text-align: center;
+  font-family: var(--font-main);
 }
 
-.footer-icons {
-  margin-top: 10px;
+.footer-logo {
+  margin: auto;
+  padding: 0.5em;
+  padding-bottom: 0.7em;
 }
 
-.footer-icons span {
-  margin: 0 15px;
-  font-size: 1.2em;
+.footer-logo img {
+  height: auto;
+  width: 100%;
+  max-width: 350px;
 }
 
-.footer-icons a {
-  color: #fff;
+.contact-social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.direccion a {
+  color: var(--Azul1);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.direccion a:hover {
+  color: var(--Turquesa1);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social.icons a {
   text-decoration: none;
 }
 
-.footer-icons a:hover {
-  color: #ffc107;
+.icon img {
+  width: 40px;
+  height: 40px;
+  transition: all 300ms;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 15px;
+.icon:hover img {
+  transform: scale(1.2);
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 1105px) {
+  header {
+    justify-content: right;
+    height: 80px;
+  }
+  .seccion-inicio {
+    margin-top: 80px;
+  }
+  #logo {
+    display: none;
+  }
+}
+@media screen and (max-width: 785px) {
+  header {
+    justify-content: right;
+  }
+  .menu-abrir,
+  .menu-cerrar {
+    display: block;
+  }
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Blanco);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+  .nav.visible {
+    height: 100vmax;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav ul {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1.2rem;
+  }
+  /*seccion inicio*/
+  .contenido-inicio {
+    flex-direction: column;
   }
 
-  .hero {
-    height: 800px;
+  /*PopUp*/
+  .popup {
+    max-width: 100dvw;
   }
 
-  .cards-container {
+  .popup-content {
+    padding: 1rem;
+    width: 80dvw;
+  }
+
+  #popupResultados .popup-content {
+    max-width: 80dvw;
+  }
+
+  .popup .cards-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .card {
-    min-width: 80%;
+  .popup .card {
+    max-width: 100%;
+    min-width: auto;
   }
+}
 
-  .overlay {
-    padding: 20px;
+@media screen and (max-width: 642px) {
+  header {
+    width: 100vw;
+    justify-content: end;
+    height: 60px;
   }
-
-  .hero h2 {
-    font-size: 2em;
+  #logo {
+    display: none;
   }
-
-  .insurance-info h2.emphasized-title {
-    font-size: 1.8em;
+  /*INICIO*/
+  .seccion-inicio {
+    height: auto;
+    margin-top: 60px;
   }
-
-  .insurance-info h3.emphasized-title {
-    font-size: 2em;
-  }
-
-  .benefits-container {
+  /*FOOTER*/
+  .contact-social-container {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
 
-  .benefit-card {
-    width: 100%;
-    max-width: 300px;
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  /*beneficios y requisitos*/
+  .contenedor-beneficios-requisitos {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    margin-right: 70px;
   }
 
-  .insurance-info p {
-    font-size: 1.1em;
+  .footer {
+    height: 230px;
   }
+}
 
-  .requirements-list li {
-    font-size: 1.1em;
+/* Animaciones */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-down {
+  animation: fadeDown 1.4s ease-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .seccion-inicio {
+    background: linear-gradient(135deg, var(--Azul1), var(--Turquesa2));
   }
 }
