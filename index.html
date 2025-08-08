@@ -352,8 +352,9 @@
       <!-- Formspree para el prototipo -->
       <form
         id="contact-form"
-        action="https://formspree.io/f/movwbpvz"
+        action="https://formspree.io/f/xyzpbqer"
         method="POST"
+        enctype="multipart/form-data"
       >
         <!-- Datos a enviar -->
         <input
@@ -370,8 +371,13 @@
           placeholder="Mensaje"
           required
         ></textarea>
+        <label for="upload">
+          <i class="fa-solid fa-upload"></i>
+          <input type="file" name="upload" />
+        </label>
+        
         <p id="mensaje-respuesta"></p>
-
+        
         <button type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
       </form>
     </section>

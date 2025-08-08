@@ -602,6 +602,13 @@ h4 {
 .contacto textarea {
   resize: none;
 }
+.contacto input[type="file"],
+.contacto form i {
+  color: var(--Blanco);
+}
+.contacto form i {
+  margin-left: 0.5rem;
+}
 
 .contacto input::placeholder,
 .contacto textarea::placeholder {
