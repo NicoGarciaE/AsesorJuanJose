@@ -1,0 +1,37 @@
+.requisitos {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.requisitos h2 {
+  margin-bottom: 10px;
+}
+
+.requisitos hr {
+  border: none;
+  height: 2px;
+  background-color: #0b4a5c; /* color de la línea */
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contenedor-requisitos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.columna {
+  flex: 1;
+  max-width: 400px;
+}
+
+.columna h3 {
+  margin-bottom: 10px;
+}
+
+.columna ul {
+  list-style: none; /* sin puntitos */
+  padding-left: 0;
+}
